@@ -4,6 +4,7 @@ version = "1.0.0"
 author = "Mauro Baladés"
 description = "Check if a string is an URL"
 edition = "2018"
+license = "MIT"
 
 [dependencies]
 regex = "1"
