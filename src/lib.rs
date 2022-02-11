@@ -30,3 +30,30 @@ pub(crate) fn is_url(url: &str) -> bool {
   let re = Regex::new(URL_REGEX).unwrap();
   return re.is_match(url);
 }
+
+
+#[cfg(test)]
+mod tests {
+  use crate::is_url;
+  
+  #[test]
+  fn normal_url() {
+    assert!(is_url("https://hello.com"));
+  }
+
+  #[test]
+  fn url_path() {
+    assert!(is_url("https://hello.com/example"));
+  }
+  
+  #[test]
+  fn url_section() {
+    assert!(is_url("https://hello.com#example"));
+  }
+  
+  #[test]
+  fn url_arguments() {
+    assert!(is_url("https://hello.com?q=hello"));
+  }
+}
+
