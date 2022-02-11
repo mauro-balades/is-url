@@ -1,5 +1,6 @@
 # is-url
-Check if a string is an URL.
+
+A rust library to check if a string is an URL
 
 ## Installation
 

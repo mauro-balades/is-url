@@ -2,9 +2,11 @@
 name = "is-url"
 version = "1.0.1"
 author = "Mauro Baladés"
-description = "Check if a string is an URL"
+description = "A rust library to check if a string is an URL."
 edition = "2018"
 license = "MIT"
+readme="README.md"
+repository = "https://github.com/mauro-balades/is-url"
 
 [dependencies]
 regex = "1"
