@@ -7,7 +7,7 @@ A rust library to check if a string is an URL
 In your `Cargo.toml` add the following line after the `dependencies` field.
 
 ```
-is-url = "1.0.3"
+is-url = "1.0.4"
 ```
 
 ## Usage

@@ -28,16 +28,16 @@ extern crate lazy_static;
 use regex::Regex;
 
 const URL_REGEX: &str =
-    r"[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)";
+    r"https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)";
 
 lazy_static! {
-    static ref re: Regex = {
+    static ref RE: Regex = {
         Regex::new(URL_REGEX).unwrap()
     };
 }
 
 pub fn is_url(url: &str) -> bool {
-    return re.is_match(url);
+    return RE.is_match(url);
 }
 
 #[cfg(test)]
