@@ -7,7 +7,7 @@ A rust library to check if a string is an URL
 In your `Cargo.toml` add the following line after the `dependencies` field.
 
 ```
-is-url = "1.0.0"
+is-url = "1.0.3"
 ```
 
 ## Usage
@@ -19,6 +19,6 @@ This is an example usage someone might do.
 use is_url::is_url;
 
 fn main() {
-  println!("{}", is_url("https://google.com")) // true
+  println!("{}", is_url("https://crates.io")) // true
 }
 ```
