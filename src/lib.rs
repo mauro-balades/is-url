@@ -22,13 +22,21 @@
 | SOFTWARE.
 */
 
+#[macro_use]
+extern crate lazy_static;
+
 use regex::Regex;
 
 const URL_REGEX: &str =
     r"[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)";
 
-pub(crate) fn is_url(url: &str) -> bool {
-    let re = Regex::new(URL_REGEX).unwrap();
+lazy_static! {
+    static ref re: Regex = {
+        Regex::new(URL_REGEX).unwrap()
+    };
+}
+
+pub fn is_url(url: &str) -> bool {
     return re.is_match(url);
 }
 

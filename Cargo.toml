@@ -1,6 +1,6 @@
 [package]
 name = "is-url"
-version = "1.0.2"
+version = "1.0.3"
 author = "Mauro Baladés"
 description = "A rust library to check if a string is an URL."
 edition = "2018"
@@ -10,3 +10,4 @@ repository = "https://github.com/mauro-balades/is-url"
 
 [dependencies]
 regex = "1"
+lazy_static = "1.4.0"
