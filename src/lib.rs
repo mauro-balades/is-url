@@ -28,7 +28,7 @@ extern crate lazy_static;
 use regex::Regex;
 
 const URL_REGEX: &str =
-    r"https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)";
+    r"https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}(\.[a-z]{2,4})?\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)";
 
 lazy_static! {
     static ref RE: Regex = {
@@ -62,5 +62,15 @@ mod tests {
     #[test]
     fn url_arguments() {
         assert!(is_url("https://hello.com?q=hello"));
+    }
+
+    #[test]
+    fn localhost() {
+        assert!(is_url("http://localhost"));
+    }
+
+    #[test]
+    fn localhost_with_port() {
+        assert!(is_url("http://localhost:3000"));
     }
 }
